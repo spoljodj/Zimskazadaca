@@ -1,0 +1,6 @@
+table#tablicaMnozenja > tr > td{
+    text-align: right;
+}
+input[type=number]{
+    width: 40px;
+} 
