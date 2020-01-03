@@ -16,6 +16,7 @@
         <li><a href="zadatak3.php">Treći Zadatak</a></li>
         <li><a href="zadatak4.php">Četvrti Zadatak</a></li>
         <li><a href="zadatak5.php">Peti Zadatak</a></li>
+        <li><a href="test.php">Test</a></li>
         </ul>
     </li> 
   </div>
