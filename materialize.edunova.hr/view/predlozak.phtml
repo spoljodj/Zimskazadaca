@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <?php include_once 'predlozak/head.phtml';  ?>
+</head>
+<body>
+  <?php
+  include_once 'predlozak/menu.phtml';
+  ?>
+
+<div class="grid-x">
+        <div class="large-12 small-12 columns">
+          <div class="callout" style="min-height: 400px;"> 
+            <?php 
+                echo $sadrzaj;
+             ?>
+          </div>
+        </div>
+      </div>
+
+  <footer class="page-footer orange">
+   <?php
+   include_once 'predlozak/footer.phtml';
+   ?>
+  </footer>
+
+
+  <!--  Scripts-->
+<?php
+include_once 'predlozak/scripts.phtml';
+?>
+  </body>
+</html>
