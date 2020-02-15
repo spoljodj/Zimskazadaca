@@ -1,6 +1,6 @@
 <?php
 
-class GeneratedController extends AutorizacijaController
+class GeneratedController extends Controller
 {
     public function index()
     {

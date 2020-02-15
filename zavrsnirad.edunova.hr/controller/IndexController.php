@@ -31,8 +31,8 @@ class IndexController extends Controller
             return;
         }
     $veza = DB::getInstanca();
-    $izraz = $veza->prepare('select * from user 
-                      where usermail=:email;');
+    $izraz = $veza->prepare('select * from admin 
+                      where usermail=:usermail;');
      $izraz->execute(['usermail'=>$_POST['email']]);
      $rezultat=$izraz->fetch();
         if($rezultat==null){
@@ -42,14 +42,14 @@ class IndexController extends Controller
             ]);
             return;
         }
-        if(!password_verify($_POST['lozinka'],$rezultat->lozinka)){
+        if(!password_verify($_POST['lozinka'],$rezultat->userpassword)){
             $this->view->render('prijava',[
                 'poruka'=>'Neispravna kombinacija email i lozinka',
                 'email'=>$_POST['email']
             ]);
             return;
         }
-        unset($rezultat->lozinka);
+        unset($rezultat->userpassword);
         $_SESSION['user']=$rezultat;
     }                
     public function odjava()
@@ -75,7 +75,7 @@ class IndexController extends Controller
     }
     public function test()
     {
-     //echo password_hash('caa',PASSWORD_BCRYPT);
+     //echo password_hash('caau.99F',PASSWORD_BCRYPT);
       
     } 
 }

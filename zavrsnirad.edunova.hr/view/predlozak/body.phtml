@@ -3,43 +3,22 @@
 <div class="title-bar-title"><?php echo APP::config('nazivAPP'); ?></div>
 </div>
 <div class="top-bar" id="example-animated-menu" data-animate="hinge-in-from-top spin-out">
-    <div class="top-bar-left">
-        <ul class="dropdown menu" data-dropdown-menu>
+    <div class="top-bar-right">
+        <ul class="menu">
             <li class="menu-text show-for-large">
             <?php echo APP::config('nazivAPP'); ?>
             </li>
-            <li><a href="/">Početna</a></li>
             <li>
-                    <a href="#">Programi</a>
-                    <ul class="vertical menu">
-                        <li><a href="/shop/index">Shop</a></li>
-                        <li><a href="/shopkeer/index">Shopkeer</a></li>
-                        <li><a href="/item/index">Item</a></li>
-                        <li><a href="/generated/index">Generated</a></li>
-                    </ul>
-                </li>
-            <?php if(isset($_SESSION['operater'])):?>
-                <li><a href="/nadzornaploca/index">Nadzorna ploča</a></li>
-                <?php if($_SESSION['operater']->uloga==='admin'):?>
-                    <li><a href="/operater/index">Operateri</a></li>
-                <?php else:?>
-                    <li><a href="/nadzornaploca/profil">Profil</a></li>
-                <?php endif;?>
-            <?php endif;?>
-            
-        </ul>
-    </div>
-    <div class="top-bar-right">
-        <ul class="menu">
-            <li>
-            <?php if(!isset($_SESSION['operater'])): ?>
-                <a href="index/prijava">Prijava</a>
+            <?php if(!isset($_SESSION['admin'])): ?>
+                <a href="index/prijava">Admin</a>
             <?php else:?>
                 <a href="/index/odjava">Odjavi 
-                <?php echo $_SESSION['operater']->ime . 
-                ' ' . $_SESSION['operater']->prezime; ?></a>
+                <?php echo $_SESSION['admin']->username ?></a>
             <?php endif;?>
-            </li>
+                </li>
+            <?php if(isset($_SESSION['admin'])):?>
+                <li><a href="/item/index">Itemi</a></li>
+            <?php endif; ?>
         </ul>
     </div>
 </div>
